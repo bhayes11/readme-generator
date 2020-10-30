@@ -16,6 +16,7 @@ The purpose of this project was to create a README generator.
 
 ## License
 
+
 [MIT](https://choosealicense.com/licenses/mit/#) License
 
 ## Contributing
