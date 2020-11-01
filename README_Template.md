@@ -1,4 +1,5 @@
 # README-Generator
+![APM](https://img.shields.io/badge/License-MIT-brightgreen)
 
 ## Description
 
@@ -21,7 +22,7 @@ The purpose of this project was to create a README generator.
 ## Usage
 
 ## License
-
+![APM](https://img.shields.io/badge/License-MIT-brightgreen)
 
 [MIT](https://choosealicense.com/licenses/mit/#) License
 
