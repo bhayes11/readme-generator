@@ -7,7 +7,8 @@ const generate = require("./utils/generateMarkdown");
 
 
 // array of questions for user
-const questions = [
+const promptUser = () =>
+  inquirer.prompt([
     {
         type: "input",
         name: "title",
@@ -40,7 +41,7 @@ const questions = [
     {
         type: "input",
         name: "license",
-        message: "What license would you like ot use?"
+        message: "What license would you like to use?"
     },
 
     {
@@ -72,16 +73,16 @@ const questions = [
         name: "email",
         message: "What is your email?"
     },
-
-
-
-
-
-];
+]);
 
 // function to write README file
-function writeToFile(fileName, data) {
-}
+//function writeToFile(fileName, data) {
+//}
+
+promptUser()
+  .then((data) => writeFileAsync('README.md', generateMarkdown(data)))
+  .then(() => console.log('Successfully wrote to README.md'))
+  .catch((err) => console.error(err));
 
 // function to initialize program
 function init() {
