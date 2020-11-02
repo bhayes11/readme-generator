@@ -73,16 +73,16 @@ const promptUser = () =>
         name: "email",
         message: "What is your email?"
     },
-]);
+])
 
 // function to write README file
 //function writeToFile(fileName, data) {
 //}
 
 promptUser()
-  .then((data) => writeFileAsync('README.md', generateMarkdown(data)))
-  .then(() => console.log('Successfully wrote to README.md'))
-  .catch((err) => console.error(err));
+  //.then((data) => writeFileAsync('README.md', generateMarkdown(data)))
+  //.then(() => console.log('Successfully wrote to README.md'))
+  //.catch((err) => console.error(err));
 
 // function to initialize program
 function init() {
