@@ -1,23 +1,20 @@
 //console.log("hello");
 
 const fs = require("fs");
+const path = require("path");
+const { get } = require("http");
 const inquirer = require("inquirer");
 const generate = require("./utils/generateMarkdown");
 
 
 
 // array of questions for user
-const promptUser = () =>
+const init = () =>
   inquirer.prompt([
     {
         type: "input",
         name: "title",
         message: "What is your project title?"
-    },
-    {
-        type: "input",
-        name: "badge",
-        message: "What badges do you want?"
     },
 
     {
@@ -29,7 +26,8 @@ const promptUser = () =>
     {
         type: "input",
         name: "installation",
-        message: "What are the installation instructions?"
+        message: "What are the installation instructions?",
+        default: "npm i"
     },
 
     {
@@ -39,9 +37,10 @@ const promptUser = () =>
     },
 
     {
-        type: "input",
+        type: "list",
         name: "license",
-        message: "What license would you like to use?"
+        message: "What license would you like to use?",
+        choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
     },
 
     {
@@ -53,13 +52,8 @@ const promptUser = () =>
     {
         type: "input",
         name: "test",
-        message: "What are the test instructions?"
-    },
-
-    {
-        type: "input",
-        name: "badge",
-        message: "What badges do you want?"
+        message: "What are the test instructions?",
+        default: "npm test"
     },
 
     {
@@ -73,21 +67,22 @@ const promptUser = () =>
         name: "email",
         message: "What is your email?"
     },
-])
+]).then((data) => {
+    console.log(data);
+    //generate data for md
+    const generatedData = generate(data);
+    console.log(generatedData);
+
+    //create the md file
+    writeToFile('TEST.md', generatedData)
+})
 
 // function to write README file
-//function writeToFile(fileName, data) {
-//}
-
-promptUser()
-  //.then((data) => writeFileAsync('README.md', generateMarkdown(data)))
-  //.then(() => console.log('Successfully wrote to README.md'))
-  //.catch((err) => console.error(err));
-
-// function to initialize program
-function init() {
-
+function writeToFile(fileName, data) {
+    return fs.writeFileSync(
+        path.join(fileName),
+        data
+    );
 }
 
-// function call to initialize program
 init();
