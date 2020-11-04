@@ -74,7 +74,7 @@ const init = () =>
     console.log(generatedData);
 
     //create the md file
-    writeToFile('TEST.md', generatedData)
+    writeToFile('README.md', generatedData)
 })
 
 // function to write README file
