@@ -4,7 +4,7 @@
 
 ## Description
 
-Description
+y
 
 ## Table of Contents
 - [Installation](#Installation)
@@ -20,7 +20,7 @@ npm i
 
 ## Usage
 
-Usage
+y
 
 ## License
 ![Github license](https://img.shields.io/badge/license-MIT-blue.svg)
@@ -28,7 +28,7 @@ Usage
 
 ## Contributing
 
-Me
+y
 
 ## Tests
 
